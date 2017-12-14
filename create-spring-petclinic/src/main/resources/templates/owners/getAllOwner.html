@@ -1,0 +1,34 @@
+<html xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
+
+<body>
+
+  <h2>Find All Owners</h2>
+
+
+ 	 <form th:object="${owners}" th:action="@{/owners/getAllOwner}" method="get"
+    		class="form-horizontal" id="search-owner-form">
+
+	<table class="table table-bordered table-hover table-striped">
+	<thead>
+	    <tr>
+	        <th>First Name</th>
+	        <th>Last Name</th>  
+	        <th>Address</th>
+	        <th>City</th>
+	        <th>Telephone</th>
+	   </tr>
+	 </thead>
+	 <tbody>
+	     <tr th:each="currentOwner : ${owners}">         
+	         <td th:text="${currentOwner.getFirstName()}" ></td>
+	         <td th:text="${currentOwner.getLastName()}"></td>
+	         <td th:text="${currentOwner.getAddress()}"></td>
+	         <td th:text="${currentOwner.getCity()}"></td>
+	         <td th:text="${currentOwner.getTelephone()}"></td>
+	      </tr>
+	  </tbody>
+	  </table>
+	</form>
+  </body>
+ </html>

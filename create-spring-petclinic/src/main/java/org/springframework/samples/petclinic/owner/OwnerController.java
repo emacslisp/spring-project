@@ -141,5 +141,17 @@ class OwnerController {
 		mav.addObject(this.owners.findById(ownerId));
 		return mav;
 	}
+	
+	@RequestMapping("/owners/getAllOwner")
+	public ModelAndView getAllOwner()
+	{
+		ModelAndView mav = new ModelAndView("owners/getAllOwner");
+		System.out.println("=====================================");
+		System.out.println("======= Here is print out message ===");
+		System.out.println("find all size: " + this.owners.findAll().size());
+		System.out.println("=====================================");
+		mav.addObject("owners", this.owners.findAll());
+		return mav;
+	}
 
 }
