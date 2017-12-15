@@ -49,6 +49,12 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("user").password("password").roles("USER")
                 .and()
                 .withUser("admin").password("password").roles("ADMIN");
+        
+    }
+    
+    @Autowired
+    public void configureGlobal1(AuthenticationManagerBuilder auth) throws Exception {
+        auth.authenticationProvider(new MyAuthenticationProvider());
     }
 
     /*
