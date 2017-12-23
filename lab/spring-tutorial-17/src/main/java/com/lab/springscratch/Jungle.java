@@ -25,6 +25,10 @@ public class Jungle {
 			sb.append(entry.getKey() + ": " + entry.getValue() + "\n");
 		}
 		
+		for(Map.Entry<String, Animal> entry: animals.entrySet()) {
+			sb.append(entry.getKey() + ": " + entry.getValue() + "\n");
+		}
+		
 		return sb.toString();
 	}
 }
