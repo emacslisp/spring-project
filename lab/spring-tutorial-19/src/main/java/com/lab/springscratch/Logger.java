@@ -4,11 +4,12 @@ public class Logger {
 	private ConsoleWriter consoleWriter;
 	private FileWriter fileWriter;
 	
-	public Logger(ConsoleWriter consoleWriter, FileWriter fileWriter) {
+	// code for byConstructor
+	/*public Logger(ConsoleWriter consoleWriter, FileWriter fileWriter) {
 		this.consoleWriter = consoleWriter;
 		this.fileWriter = fileWriter;
 		System.out.println("constructor are called");
-	}
+	}*/
 
 	public void setConsoleWriter(ConsoleWriter writer) {
 		this.consoleWriter = writer;
