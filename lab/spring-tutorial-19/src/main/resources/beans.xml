@@ -20,7 +20,7 @@
 	<bean id="fileWriter" class="com.lab.springscratch.FileWriter">
 	</bean>
 	
-	<bean id="test" class="com.lab.springscratch.FileWriter">
+	<bean id="testWriter" class="com.lab.springscratch.FileWriter" autowire-candidate="false">
 	</bean>
 	
 </beans>
