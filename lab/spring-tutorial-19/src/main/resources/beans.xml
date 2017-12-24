@@ -6,7 +6,7 @@
 
 
 	<bean id="logger" class="com.lab.springscratch.Logger"
-		autowire="byName">
+		autowire="constructor">
 
 	</bean>
 
