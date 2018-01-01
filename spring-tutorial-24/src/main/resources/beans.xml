@@ -13,8 +13,8 @@
 	</bean>
 
 
-	<bean id="consoleWriter" class="com.lab.springscratch.ConsoleWriter">
-	</bean>
+	<!-- <bean id="consoleWriter" class="com.lab.springscratch.ConsoleWriter">
+	</bean> -->
 
 	<bean id="fileWriter" class="com.lab.springscratch.FileWriter">
 	</bean>
