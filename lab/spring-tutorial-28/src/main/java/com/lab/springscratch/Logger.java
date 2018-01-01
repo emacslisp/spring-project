@@ -1,5 +1,7 @@
 package com.lab.springscratch;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,16 @@ public class Logger {
 	public void writeConsole(String text) {
 		if (consoleWriter != null)
 			consoleWriter.write(text);
+	}
+	
+	@PostConstruct
+	public void init() {
+		System.out.println("init");
+	}
+	
+	@PreDestroy
+	public void destroy() {
+		System.out.println("PreDestroy");
 	}
 
 }
