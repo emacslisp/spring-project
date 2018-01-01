@@ -76,3 +76,4 @@ local.properties
 
 target
 RemoteSystemsTempFiles
+.DS_Store
