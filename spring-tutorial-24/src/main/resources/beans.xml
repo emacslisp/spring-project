@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	>
+
+
+
+	<bean id="logger" class="com.lab.springscratch.Logger"
+		>
+
+	</bean>
+
+
+	<bean name="consoleWriter" class="com.lab.springscratch.ConsoleWriter">
+	</bean>
+
+	<bean id="fileWriter" class="com.lab.springscratch.FileWriter">
+	</bean>
+	
+	<bean id="testWriter" class="com.lab.springscratch.FileWriter" autowire-candidate="false">
+	</bean>
+	
+</beans>
