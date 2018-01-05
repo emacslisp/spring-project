@@ -11,12 +11,14 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
+@Component("offersDao")
 public class OffersDAO {
 	private JdbcTemplate jdbc;
 	
 	@Autowired
 	public void setDataSource(DataSource jdbc) {
 		this.jdbc = new JdbcTemplate(jdbc);
+		System.out.println("============ init data source =============");
 	}
 
 	public List<Offer> getOffers() {
