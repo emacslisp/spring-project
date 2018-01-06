@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.CannotGetJdbcConnectionException;
 
 public class App {
 
@@ -19,8 +20,15 @@ public class App {
 			for (Offer offer : offers) {
 				System.out.println(offer);
 			}
-		} catch (DataAccessException e) {
+		} 
+		catch(CannotGetJdbcConnectionException e) {
+			System.out.println("Can not establish jdbc connection");
+		}
+		catch (DataAccessException e) {
 			System.out.println(e.getMessage());
+			System.out.println(e.getClass());
+		}
+		catch(Exception e) {
 			System.out.println(e.getClass());
 		}
 
