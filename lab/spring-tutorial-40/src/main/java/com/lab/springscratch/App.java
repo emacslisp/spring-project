@@ -1,5 +1,6 @@
 package com.lab.springscratch;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
@@ -29,8 +30,18 @@ public class App {
 			
 			//offersDao.delete(80);
 			
-			Offer offer2 = new Offer(82, "eddywu","eddywu@test.com","coding in spring");
-			offersDao.update(offer2);
+			/*Offer offer2 = new Offer(82, "eddywu","eddywu@test.com","coding in spring");
+			offersDao.update(offer2);*/
+			
+			/*List<Offer> offers1 = new ArrayList<Offer>();
+			offers1.add(new Offer("Dave","dave@test.com","coding for java"));
+			offers1.add(new Offer("cave","cave@test.com","coding for java"));
+			offersDao.create(offers1);*/
+			List<Offer> offers1 = new ArrayList<Offer>();
+			offers1.add(new Offer(91, "eddywu85","eddywu@test.com","coding in spring"));
+			offers1.add(new Offer(94, "eddywu82","eddywu@test.com","coding in spring"));
+			
+			offersDao.create(offers1);
 			
 			List<Offer> offers = offersDao.getOffers();
 
