@@ -46,6 +46,12 @@ public class OffersDAO {
 		});
 	}
 	
+	public boolean update(Offer offer) {
+		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(offer);
+		
+		return jdbc.update("update offers set name=:name, text=:text, email=:email where id=:id",params) == 1;
+	}
+	
 	public boolean create(Offer offer) {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(offer);
 		

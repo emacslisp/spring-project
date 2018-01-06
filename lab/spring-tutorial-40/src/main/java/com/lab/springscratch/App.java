@@ -16,7 +16,7 @@ public class App {
 		OffersDAO offersDao = (OffersDAO) context.getBean("offersDao");
 		try {
 			
-			Offer offer1 = new Offer("wudi","test@test.com","coding java");
+			/*Offer offer1 = new Offer("wudi","test@test.com","coding java");
 			Offer offer2 = new Offer("eddywu","test@test.com","coding java");
 			
 			if(offersDao.create(offer1)) {
@@ -25,9 +25,12 @@ public class App {
 			
 			if(offersDao.create(offer2)) {
 				System.out.println("Create offer2: " + offer2);
-			}
+			}*/
 			
 			//offersDao.delete(80);
+			
+			Offer offer2 = new Offer(82, "eddywu","eddywu@test.com","coding in spring");
+			offersDao.update(offer2);
 			
 			List<Offer> offers = offersDao.getOffers();
 
