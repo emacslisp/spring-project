@@ -44,5 +44,25 @@ public class OffersDAO {
 			
 		});
 	}
+	
+	public Offer getOffer(int id) {
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("id", id);
+	
+		return jdbc.queryForObject("select * from offers where id = :id", params, new RowMapper<Offer>() {
+
+			public Offer mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Offer offer = new Offer();
+				
+				offer.setId(rs.getInt("id"));
+				offer.setName(rs.getString("name"));
+				offer.setText(rs.getString("text"));
+				offer.setEmail(rs.getString("email"));
+				
+				return offer;
+			}
+			
+		});
+	}
 
 }
