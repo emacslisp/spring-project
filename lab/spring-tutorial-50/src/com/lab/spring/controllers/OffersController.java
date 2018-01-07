@@ -8,6 +8,7 @@ public class OffersController {
 
 	@RequestMapping("/")
 	public String showHome() {
-		return "Home";
+		// this means index.jsp, "xxx".jsp
+		return "index";
 	}
 }
