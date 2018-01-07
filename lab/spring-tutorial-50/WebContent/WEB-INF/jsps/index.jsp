@@ -9,6 +9,11 @@
 <body>
 Hi this is a test page!!!!
 
-Session: <%= session.getAttribute("name")  %>
+Session: <%= session.getAttribute("name")  %> <br/>
+
+Request: <%= request.getAttribute("name") %> <br/>
+
+Request (using EL): ${name} <br/>
+
 </body>
 </html>
