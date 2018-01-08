@@ -32,6 +32,8 @@ public class OffersController {
 		
 		model.addAttribute("name", "New Model");
 		
+		System.out.println("======== Hello ============");
+		
 		return "index";
 	}
 }
