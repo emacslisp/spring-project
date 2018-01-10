@@ -25,7 +25,7 @@ public class OffersDAO {
 		System.out.println("========= OffersDAO is loaded ================");
 	}
 	
-	//@Autowired
+	@Autowired
 	public void setDataSource(DataSource jdbc) {
 		this.jdbc = new NamedParameterJdbcTemplate(jdbc);
 		System.out.println("============ init data source =============");
