@@ -1,16 +1,23 @@
 package com.lab.spring.controllers;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.lab.spring.dao.Offer;
+import com.lab.spring.service.OffersService;
+
 @Controller
 public class OffersController {
+	
+	private OffersService offersService;
 
 	/*@RequestMapping("/")
 	public ModelAndView showHome(HttpSession session) {
@@ -26,11 +33,16 @@ public class OffersController {
 		return mv;
 	}*/
 	
+	@Autowired
+	public void setOffersService(OffersService offersService) {
+		this.offersService = offersService;
+	}
+
 	@RequestMapping("/")
 	public String showHome(Model model) {
 		// this means index.jsp, "xxx".jsp
-		
-		model.addAttribute("name", "New Model");
+		List<Offer> offers = offersService.getCurrent();
+		model.addAttribute("offers", offers);
 		
 		System.out.println("======== Hello ============");
 		

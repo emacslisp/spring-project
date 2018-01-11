@@ -19,13 +19,13 @@ Request: <%= request.getAttribute("name") %> <br/>
 
 Request (using EL): ${name} <br/>
 
-<c:out value="${name}"></c:out> <p/>
+<!--<c:out value="${name}"></c:out> <p/>
 
 <sql:query var="rs" dataSource="jndi/spring">
 select name, email, text from offers
-</sql:query>
+</sql:query>-->
 
-<c:forEach var="row" items="${rs.rows}">
+<c:forEach var="row" items="${offers}">
     name ${row.name}<br/>
     email ${row.email}<br/>
     text ${row.text}<br/>
