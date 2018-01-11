@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.lab.spring.dao.Offer;
 import com.lab.spring.service.OffersService;
@@ -31,6 +32,14 @@ public class HomeController {
 	@Autowired
 	public void setOffersService(OffersService offersService) {
 		this.offersService = offersService;
+	}
+	
+	@RequestMapping("/test")
+	public String showTest(Model model, @RequestParam("id") String id) {
+		
+		System.out.println("========= id is: " + id);
+		
+		return "index";
 	}
 	
 	
