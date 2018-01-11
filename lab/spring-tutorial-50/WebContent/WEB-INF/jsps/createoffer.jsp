@@ -7,6 +7,24 @@
 <title>Insert title here</title>
 
 <style>
+.formtable {
+	padding:10px;
+	border: 1px solid blue;
+}
+
+input[type=text] {
+	width: 200px;
+}
+
+textarea {
+	width: 200px;
+	height: 150px;
+}
+
+.label {
+	text-align: right;
+	vertical-align: top;
+}
 
 </style>
 
@@ -15,21 +33,21 @@
 	<form name="input"
 		action="${pageContext.request.contextPath}/docreate" method="post">
 
-		<table>
+		<table  class="formtable">
 
 			<tbody>
 				<tr>
-					<td>Name:</td>
+					<td class="label">Name:</td>
 					<td><input type="text" name="name" /></td>
 				</tr>
 
 				<tr>
-					<td>Email:</td>
+					<td class="label">Email:</td>
 					<td><input type="text" name="email" /></td>
 				</tr>
 
 				<tr>
-					<td>Text:</td>
+					<td class="label">Text:</td>
 					<td><textarea name="text" rows="10" cols="10"></textarea></td>
 				</tr>
 
