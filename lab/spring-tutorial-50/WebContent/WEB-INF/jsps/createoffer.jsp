@@ -8,7 +8,7 @@
 </head>
 <body>
 	<form name="input"
-		action="${pageContext.request.contextPath}/createoffer}" method="get">
+		action="${pageContext.request.contextPath}/docreate" method="post">
 
 		<table>
 
@@ -25,7 +25,7 @@
 
 				<tr>
 					<td>Text:</td>
-					<td><textarea rows="10" cols="10"></textarea></td>
+					<td><textarea name="text" rows="10" cols="10"></textarea></td>
 				</tr>
 
 			</tbody>
