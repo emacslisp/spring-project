@@ -26,10 +26,11 @@ select name, email, text from offers
 </sql:query>-->
 
 <c:forEach var="row" items="${offers}">
-    name ${row.name}<br/>
-    email ${row.email}<br/>
-    text ${row.text}<br/>
+	<p><c:out value="${row}"></c:out> </p>
 </c:forEach>
+
+<p><a href="${pageContext.request.contextPath}/offers">offers</a></p>
+<p><a href="${pageContext.request.contextPath}/createoffer">create offer</a></p>
 
 </body>
 </html>
