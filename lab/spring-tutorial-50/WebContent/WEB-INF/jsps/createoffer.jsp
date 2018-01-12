@@ -6,27 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
-<style>
-.formtable {
-	padding:10px;
-	border: 1px solid blue;
-}
-
-input[type=text] {
-	width: 200px;
-}
-
-textarea {
-	width: 200px;
-	height: 150px;
-}
-
-.label {
-	text-align: right;
-	vertical-align: top;
-}
-
-</style>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/main.css">
 
 </head>
 <body>
