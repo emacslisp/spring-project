@@ -56,6 +56,7 @@ public class OffersController {
 	@RequestMapping(value="/createoffer")//, method = RequestMethod.POST)
 	public String createOffer(Model model) {
 		// this means index.jsp, "xxx".jsp
+		model.addAttribute("offer",new Offer("name","email","text"));
 		return "createoffer";
 	}
 	
