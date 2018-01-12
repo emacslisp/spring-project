@@ -11,6 +11,12 @@
 
 </head>
 <body>
+
+<!-- 
+don't use commandName for new version of spring, use modelAttribute
+public void setCommandName(String commandName) {
+    this.modelAttribute = commandName;
+} -->
 <sf:form method="post" action="${pageContext.request.contextPath}/docreate" modelAttribute="offer">
 
 		<table  class="formtable">
