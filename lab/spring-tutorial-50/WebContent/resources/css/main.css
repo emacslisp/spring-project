@@ -19,3 +19,9 @@ textarea {
 	text-align: right;
 	vertical-align: top;
 }
+
+.error {
+	font-size: small;
+	color: red;
+	marget-left: 10px;
+}

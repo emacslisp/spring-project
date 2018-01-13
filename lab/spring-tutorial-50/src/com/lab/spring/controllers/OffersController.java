@@ -72,6 +72,8 @@ public class OffersController {
 			for(ObjectError error: errors) {
 				System.out.println(error);
 			}
+			
+			return "createoffer";
 		}
 		else {
 			System.out.println("Form Valid");
