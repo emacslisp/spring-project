@@ -75,9 +75,8 @@ public class OffersController {
 			
 			return "createoffer";
 		}
-		else {
-			System.out.println("Form Valid");
-		}
+		
+		offersService.createOffer(offer);
 		
 		return "offercreated";
 	}
