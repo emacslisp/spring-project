@@ -4,6 +4,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.lab.spring.validation.ValidEmail;
+
 public class Offer {
 	private int id;
 	
@@ -12,7 +14,8 @@ public class Offer {
 	private String name;
 	
 	@NotNull
-	@Pattern(regexp=".*\\@.*\\..*", message="This does not appear to be a valid email address")
+	//@Pattern(regexp=".*\\@.*\\..*", message="This does not appear to be a valid email address")
+	@ValidEmail
 	private String email;
 	
 	@Size(min=10, max=100, message="Name must be between 10 and 100 characters")
