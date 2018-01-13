@@ -30,4 +30,11 @@ public class OffersService {
 		offersDao.create(offer);
 	}
 
+
+
+	public void throwTestException() {
+		// TODO Auto-generated method stub
+		offersDao.getOffer(9999);
+	}
+
 }

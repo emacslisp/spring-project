@@ -45,7 +45,10 @@ public class OffersController {
 	@RequestMapping("/offers")
 	public String showOffers(Model model) {
 		// this means index.jsp, "xxx".jsp
+		
+		//offersService.throwTestException();
 		List<Offer> offers = offersService.getCurrent();
+		
 		model.addAttribute("offers", offers);
 		
 		System.out.println("======== Hello ============");
