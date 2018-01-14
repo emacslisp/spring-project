@@ -8,12 +8,18 @@ public class App {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		
-		Camera camera = (Camera)context.getBean("camera");
+		Object obj = context.getBean("camera");
+		System.out.println("Class of camera bean: " + obj.getClass());
+		System.out.println(obj instanceof Camera);
+		
+		ICamera camera = (ICamera) context.getBean("camera");
+		
+		//Camera camera = (Camera)context.getBean("camera");
 		
 		Lens lens = (Lens)context.getBean("lens");
 		
-		camera.snap();
 		try {
+			camera.snap();
 		camera.snap(10);
 		}catch(Exception e) {
 			System.out.println("Exception happends " + e.getMessage());

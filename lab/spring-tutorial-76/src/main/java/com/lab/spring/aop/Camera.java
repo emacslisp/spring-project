@@ -5,22 +5,25 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class Camera {
+public class Camera implements PhotoSnapper, Machine, ICamera {
 	public void snap() {
 		System.out.println("SNAP!");
 	}
 	
-	public void snap(int exposure) throws Exception {
+	@Override
+	public void snap(int exposure) {
 		System.out.println("SNAP! Exposure: " + exposure);
-		throw new Exception();
+		//throw new Exception();
 	}
 	
+	@Override
 	public String snap(String name) {
 		System.out.println("SNAP! String with name: " + name);
 		
 		return name;
 	}
 	
+	@Override
 	public void snapNighttime() {
 		System.out.println("SNAP! Night mode.");
 	}
