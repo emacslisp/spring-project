@@ -12,6 +12,10 @@ public class App {
 		
 		camera.snap();
 		
+		camera.snap(10);
+		
+		camera.snap("name");
+		
 		((ClassPathXmlApplicationContext)context).close();
 	}
 }
