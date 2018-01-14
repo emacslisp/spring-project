@@ -10,8 +10,9 @@ public class Camera {
 		System.out.println("SNAP!");
 	}
 	
-	public void snap(int exposure) {
+	public void snap(int exposure) throws Exception {
 		System.out.println("SNAP! Exposure: " + exposure);
+		throw new Exception();
 	}
 	
 	public String snap(String name) {

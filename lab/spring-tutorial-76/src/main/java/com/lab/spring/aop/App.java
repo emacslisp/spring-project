@@ -13,8 +13,11 @@ public class App {
 		Lens lens = (Lens)context.getBean("lens");
 		
 		camera.snap();
-		
+		try {
 		camera.snap(10);
+		}catch(Exception e) {
+			System.out.println("Exception happends " + e.getMessage());
+		}
 		
 		camera.snap("name");
 		

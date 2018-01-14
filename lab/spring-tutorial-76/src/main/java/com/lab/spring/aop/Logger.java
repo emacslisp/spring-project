@@ -1,5 +1,10 @@
 package com.lab.spring.aop;
 
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -25,5 +30,29 @@ public class Logger {
 	@Before("cameraSnapWithName()")
 	public void aboutToTakePhotoWithName() {
 		System.out.println("About to take photo with name...");
+	}
+	
+	@After("cameraSnap()")
+	public void afterAdvice() {
+		System.out.println("after advice...");
+	}
+	
+	@AfterReturning("cameraSnapWithName()")
+	public void afterReturning() {
+		System.out.println("after returning...");
+	}
+	
+	@AfterThrowing("cameraSnap()")
+	public void afterThrowing() {
+		System.out.println("after throwing...");
+	}
+	
+	@Around("cameraSnap()")
+	public void afterAround(ProceedingJoinPoint p) throws Throwable {
+		System.out.println("after Around (before)...");
+		
+		p.proceed();
+		
+		System.out.println("after Around (after)...");
 	}
 }
