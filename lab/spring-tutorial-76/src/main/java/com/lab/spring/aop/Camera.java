@@ -19,4 +19,8 @@ public class Camera {
 		
 		return name;
 	}
+	
+	public void snapNighttime() {
+		System.out.println("SNAP! Night mode.");
+	}
 }

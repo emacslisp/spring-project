@@ -10,11 +10,15 @@ public class App {
 		
 		Camera camera = (Camera)context.getBean("camera");
 		
+		Lens lens = (Lens)context.getBean("lens");
+		
 		camera.snap();
 		
 		camera.snap(10);
 		
 		camera.snap("name");
+		
+		lens.zoom(5);
 		
 		((ClassPathXmlApplicationContext)context).close();
 	}
