@@ -20,14 +20,14 @@ public class App {
 		
 		try {
 			camera.snap();
-		camera.snap(10);
+		//camera.snap(10);
 		}catch(Exception e) {
 			System.out.println("Exception happends " + e.getMessage());
 		}
 		
-		camera.snap("name");
+		//camera.snap("name");
 		
-		lens.zoom(5);
+		//lens.zoom(5);
 		
 		((ClassPathXmlApplicationContext)context).close();
 	}
