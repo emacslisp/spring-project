@@ -38,7 +38,11 @@ public class Logger {
 //		System.out.println("********** BEFORE DEMO ************");
 //	}
 	
-	@Pointcut("@args(java.lang.Deprecated)")
+	/*@Pointcut("@args(java.lang.Deprecated)")
+	public void somePointcut() {
+	}*/
+	
+	@Pointcut("bean(camera)")
 	public void somePointcut() {
 	}
 
