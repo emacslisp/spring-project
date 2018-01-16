@@ -42,7 +42,7 @@ public class Logger {
 	public void somePointcut() {
 	}*/
 	
-	@Pointcut("bean(camera)")
+	@Pointcut("bean(*a*)")
 	public void somePointcut() {
 	}
 
