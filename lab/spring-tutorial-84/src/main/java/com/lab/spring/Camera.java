@@ -37,6 +37,17 @@ public class Camera implements PhotoSnapper, Machine, ICamera {
 		return name;
 	}
 	
+	@Override
+	public void snap(double exposure) {
+		System.out.println("SNAP! Exposure:" + exposure);
+	}
+	
+	@Override
+	public void snap(int exposure, double aperture) {
+		System.out.printf("SNAP with exposure %d aperture %.2f\n", exposure, aperture);
+		
+	}
+	
 	/* (non-Javadoc)
 	 * @see com.caveofprogramming.spring.aop.ICamera#snapNighttime()
 	 */

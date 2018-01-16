@@ -1,4 +1,5 @@
 package com.lab.spring;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -42,13 +43,30 @@ public class Logger {
 	public void somePointcut() {
 	}*/
 	
-	@Pointcut("bean(*a*)")
+	/*
+	// int, .. or .., double
+	@Pointcut("target(com.lab.spring.Camera)")
 	public void somePointcut() {
 	}
 
 	@Before("somePointcut()")
-	public void somePointcutDemo() {
+	public void somePointcutDemo(JoinPoint jp) {
 		System.out.println("********** BEFORE DEMO ************");
+		
+		for(Object obj: jp.getArgs()) {
+			System.out.println("ARG: " + obj);
+		}
+	}*/
+	
+	@Pointcut("args(exposure, aperture)")
+	public void somePointcut(int exposure, double aperture) {
+	}
+
+	@Before("somePointcut(exposure, aperture)")
+	public void somePointcutDemo(int exposure, double aperture) {
+		System.out.println("********** BEFORE DEMO ************");
+		
+		System.out.printf("exposure %d, aperture %.2f\n", exposure, aperture);
 	}
 
 }

@@ -12,4 +12,8 @@ public interface ICamera {
 
 	public abstract void snapCar(Car car);
 
+	public abstract void snap(double exposure);
+
+	public abstract void snap(int exposure, double aperture);
+
 }
