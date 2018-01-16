@@ -7,13 +7,18 @@ public class App {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		
 		ICamera camera = (ICamera) context.getBean("camera");
-	
+		
 		camera.snap();
 		camera.snap(500);
 		camera.snapNighttime();
 		
 		Car car = (Car)context.getBean("car");
 		car.start();
+		
+		camera.snapCar(new Car());
+
+		context.close();
+
 
 		context.close();
 	}

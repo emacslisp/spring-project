@@ -1,5 +1,4 @@
 package com.lab.spring;
-
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -8,32 +7,44 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class Logger {
+
+	// @Pointcut("within(@org.springframework.stereotype.Component com.caveofprogramming.spring..*)")
+	// public void somePointcut() {
+	// }
+	//
+	//
+	// @Before("somePointcut()")
+	// public void somePointcutDemo() {
+	// System.out.println("********** BEFORE DEMO ************");
+	// }
+
+	// // @within
+	// @Pointcut("@target(org.springframework.stereotype.Component)")
+	// public void somePointcut() {
+	// }
+	//
+	//
+	// @Before("somePointcut()")
+	// public void somePointcutDemo() {
+	// System.out.println("********** BEFORE DEMO ************");
+	// }
+
+//	@Pointcut("@annotation(java.lang.Deprecated)")
+//	public void somePointcut() {
+//	}
+//
+//	@Before("somePointcut()")
+//	public void somePointcutDemo() {
+//		System.out.println("********** BEFORE DEMO ************");
+//	}
 	
-	@Pointcut("within(com.lab.spring..*)")
-	public void withinDemo() {
+	@Pointcut("@args(java.lang.Deprecated)")
+	public void somePointcut() {
 	}
-	
-	@Pointcut("target(com.lab.spring.Camera)")
-	public void targetDemo() {
-	}
-	
-	@Pointcut("this(com.lab.spring.ICamera)")
-	public void thisDemo() {
-	}
-	
-	@Before("withinDemo()")
-	public void withinDemoAdvice() {
+
+	@Before("somePointcut()")
+	public void somePointcutDemo() {
 		System.out.println("********** BEFORE DEMO ************");
 	}
-	
-	@Before("targetDemo()")
-	public void targetDemoAdvice() {
-		System.out.println("********** TARGET DEMO ************");
-	}
-	
-	@Before("thisDemo()")
-	public void thisDemoAdvice() {
-		System.out.println("********** THIS DEMO ************");
-	}
-	
+
 }

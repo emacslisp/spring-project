@@ -4,33 +4,48 @@ import org.springframework.stereotype.Component;
 
 @Component("camera")
 public class Camera implements PhotoSnapper, Machine, ICamera {
+	
 	public Camera() {
 		System.out.println("Hello from camera constructor");
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.caveofprogramming.spring.aop.ICamera#snap()
+	 */
 	@Override
+	@Deprecated
 	public void snap() {
 		System.out.println("SNAP!");
 
 	}
-
+	
+	/* (non-Javadoc)
+	 * @see com.caveofprogramming.spring.aop.ICamera#snap(int)
+	 */
 	@Override
 	public void snap(int exposure) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("SNAP! Exposure:" + exposure);
 	}
-
+	
+	/* (non-Javadoc)
+	 * @see com.caveofprogramming.spring.aop.ICamera#snap(java.lang.String)
+	 */
 	@Override
 	public String snap(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("SNAP! Name:" + name);
+		
+		return name;
 	}
-
+	
+	/* (non-Javadoc)
+	 * @see com.caveofprogramming.spring.aop.ICamera#snapNighttime()
+	 */
 	@Override
 	public void snapNighttime() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("SNAP! Night mode.");
 	}
 	
-	
+	public void snapCar(Car car) {
+		System.out.println("Snapping car!");
+	}
 }
