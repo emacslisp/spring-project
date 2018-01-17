@@ -21,8 +21,5 @@ public class App {
 		camera.snapCar(new Car());
 
 		context.close();
-
-
-		context.close();
 	}
 }
