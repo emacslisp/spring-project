@@ -17,4 +17,9 @@
 	<jee:jndi-lookup id="dataSource" jndi-name="jndi/spring"
 		expected-type="javax.sql.DataSource">
 	</jee:jndi-lookup>
+	
+	<bean id="passwordEncoder"
+		class="org.springframework.security.crypto.password.NoOpPasswordEncoder"
+		factory-method="getInstance">
+	</bean>
 </beans>
